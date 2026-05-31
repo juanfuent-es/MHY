@@ -1,0 +1,241 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #f8ecff;
+  background:
+    radial-gradient(circle at top, rgba(255, 84, 177, 0.28), transparent 28%),
+    linear-gradient(135deg, #0d0713 0%, #160a1f 45%, #07050b 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.layout {
+  width: min(1200px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 3rem;
+}
+
+.hero {
+  display: grid;
+  gap: 1.5rem;
+  align-items: end;
+  grid-template-columns: 1.6fr minmax(280px, 360px);
+  margin-bottom: 1.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #ff77cd;
+  font-size: 0.82rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+
+.lead {
+  max-width: 60ch;
+  margin-top: 1rem;
+  color: rgba(248, 236, 255, 0.82);
+  font-size: 1.05rem;
+}
+
+.token-note,
+.panel,
+.mapboxgl-popup-content {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(16, 8, 24, 0.82);
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.token-note {
+  border-radius: 1.5rem;
+  padding: 1.1rem 1.2rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.token-note strong {
+  color: #ffd0f0;
+}
+
+.token-note span,
+.place-card p,
+.map-placeholder,
+.popup-card span {
+  color: rgba(248, 236, 255, 0.75);
+}
+
+.token-note code,
+.map-placeholder code {
+  color: #ff95d7;
+}
+
+.token-note.is-ready {
+  border-color: rgba(104, 255, 176, 0.28);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(280px, 360px);
+  gap: 1.5rem;
+}
+
+.panel {
+  border-radius: 1.75rem;
+  overflow: hidden;
+}
+
+.map-panel {
+  min-height: 70vh;
+}
+
+.map,
+.map-placeholder {
+  min-height: 70vh;
+}
+
+.map {
+  position: relative;
+}
+
+.map-placeholder {
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 0.65rem;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at center, rgba(255, 119, 205, 0.18), transparent 30%),
+    linear-gradient(180deg, rgba(14, 9, 19, 0.98), rgba(7, 5, 11, 0.98));
+}
+
+.map-placeholder__hint {
+  font-size: 0.95rem;
+}
+
+.sidebar {
+  padding: 1.4rem;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.places-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.place-card {
+  padding: 1rem;
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  background: linear-gradient(180deg, rgba(43, 17, 54, 0.92), rgba(18, 10, 26, 0.92));
+}
+
+.place-card h3 {
+  margin: 0.25rem 0 0.45rem;
+  font-size: 1.15rem;
+}
+
+.place-mood,
+.popup-card p {
+  color: #ff88d2;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.72rem;
+}
+
+.map-marker {
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background: radial-gradient(circle at 35% 35%, #ffe4f7 0%, #ff74c7 45%, #9d1d68 100%);
+  box-shadow: 0 0 0 0.35rem rgba(255, 116, 199, 0.18), 0 0 24px rgba(255, 116, 199, 0.8);
+}
+
+.mapboxgl-ctrl-group,
+.mapboxgl-popup-content,
+.mapboxgl-popup-tip {
+  background: rgba(16, 8, 24, 0.92);
+  color: #f8ecff;
+}
+
+.mapboxgl-ctrl button .mapboxgl-ctrl-icon {
+  filter: invert(1);
+}
+
+.mapboxgl-popup-content {
+  border-radius: 1rem;
+  padding: 0.95rem 1rem;
+}
+
+.popup-card {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.popup-card h3 {
+  font-size: 1rem;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    width: min(100%, calc(100% - 1.25rem));
+    padding-top: 1.5rem;
+  }
+
+  .hero,
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .map-panel,
+  .map,
+  .map-placeholder {
+    min-height: 58vh;
+  }
+}
