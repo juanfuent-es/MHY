@@ -4,29 +4,11 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 
 const places = [
   {
-    title: 'Templo de Debod',
-    mood: 'Atardecer eléctrico',
-    description: 'Una parada con vistas abiertas, tonos dorados y energía nocturna.',
-    coordinates: [-3.7187, 40.424],
-  },
-  {
-    title: 'Malasaña',
-    mood: 'Rock & neón',
-    description: 'Calles para perderse entre vinilos, cafés y escaparates con actitud.',
-    coordinates: [-3.7033, 40.4262],
-  },
-  {
-    title: 'Gran Vía',
-    mood: 'Sexy city lights',
-    description: 'El punto para sentir la ciudad con luces intensas y ritmo urbano.',
-    coordinates: [-3.7038, 40.4193],
-  },
-  {
-    title: 'Parque del Retiro',
-    mood: 'Glow chill',
-    description: 'Un respiro elegante para equilibrar el viaje entre verde y calma.',
-    coordinates: [-3.6825, 40.4153],
-  },
+    title: 'Bellas Artes',
+    mood: 'Noches de Arte Urbao',
+    description: 'Exposiciones, cerveza, mezcal y cafés con vibra bohemia.',
+    coordinates: [19.4352,-99.1437749],
+  }
 ]
 
 const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN?.trim()
@@ -37,11 +19,7 @@ const app = document.querySelector('#app')
 app.innerHTML = `
   <main class="layout">
     <section class="hero">
-      <div>
-        <p class="eyebrow">MHY • City Guide</p>
-        <h1>Mapa Mapbox con vibra rocker y sexy.</h1>
-        <p class="lead">Una guía visual con lugares de visita destacados, estética nocturna y despliegue listo para GitHub Pages.</p>
-      </div>
+      <h1>MHY</h1>
       <div class="token-note ${mapboxToken ? 'is-ready' : ''}">
         ${mapboxToken
           ? '<strong>Mapbox listo.</strong><span>El token está cargado y el mapa puede renderizarse.</span>'
