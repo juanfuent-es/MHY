@@ -7,7 +7,7 @@ const places = [
     title: 'Bellas Artes',
     mood: 'Noches de Arte Urbao',
     description: 'Exposiciones, cerveza, mezcal y cafés con vibra bohemia.',
-    coordinates: [19.4352,-99.1437749],
+    coordinates: [-99.1437, 19.4352],
   }
 ]
 
@@ -66,7 +66,7 @@ if (!mapboxToken) {
   const map = new mapboxgl.Map({
     container: 'map',
     style: styleUrl,
-    center: [-3.6995, 40.4192],
+    center: [-99.1437, 19.4352],
     zoom: 12,
     pitch: 48,
     bearing: -22,
